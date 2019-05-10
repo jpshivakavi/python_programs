@@ -6,7 +6,8 @@
     Script doesn't do of the input parameters
     It takes input from the user
 '''
-
+__version__="1.0.0"
+__author__="Jayaprakash Nevara"
 
 def list_has_negative_numbers_only(num_list):
     '''This function checks if the given input list 
