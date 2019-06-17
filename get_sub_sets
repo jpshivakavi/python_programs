@@ -1,0 +1,50 @@
+"""Sample program to the list of all sub-sets from the given list of elements"""
+
+def get_bit_list(num, number_of_bits):
+    """
+    :param num:
+    :param number_of_bits:
+    :return: Returns a list of containing the binary representation of the input num
+             The binary representation is formatted to include number_of_bits
+    """
+    bit_list = [0 * i for i in range(number_of_bits)]
+    index = 0
+    while num:
+        bit_list[index] = (num % 2)
+        num = num // 2
+        index += 1
+
+    bit_list.reverse()
+    return bit_list
+
+
+def map_bits_to_elements(bit_list, my_list):
+    """
+    :param bit_list: input containing the binary representation of a number in bit list format
+    :param my_list: Input list
+    :return: a list representing a sub-set obtained by mapping the bit_list to input list
+    """
+    sub_set = list()
+    index = 0
+    while index < len(bit_list):
+        if bit_list[index]:
+            sub_set.append(my_list[index])
+        index += 1
+    return sub_set
+
+
+def get_sub_sets(my_list):
+    length_of_list = len(my_list)
+    num_of_sub_sets = pow(2, length_of_list)
+
+    for i in range(num_of_sub_sets):
+        bit_list = get_bit_list(i, length_of_list)
+        sub_set = map_bits_to_elements(bit_list, my_list)
+        print(sub_set)
+
+
+# input list
+my_lis_input = [1, 2, 3, 4]
+# function to get all the sub-set
+get_sub_sets(my_lis_input)
+
