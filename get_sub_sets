@@ -4,8 +4,8 @@ def get_bit_list(num, number_of_bits):
     """
     :param num:
     :param number_of_bits:
-    :return: Returns a list of containing the binary representation of the input num
-             The binary representation is formatted to include number_of_bits
+    :return: Returns a list containing binary representation of the input num.
+             The binary representation of input 'num' is adjusted to the length as specified by input 'number_of_bits'
     """
     bit_list = [0 * i for i in range(number_of_bits)]
     index = 0
